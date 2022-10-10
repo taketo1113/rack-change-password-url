@@ -6,19 +6,32 @@ RSpec.describe ChangePasswordUrlRails::Middleware do
   include Rack::Test::Methods
   include_context 'mock app'
 
-  let(:app) { described_class.new(mock_app) }
+  let(:redirect_path) { nil }
+  let(:app) { described_class.new(mock_app, redirect_path: redirect_path) }
 
   context "path: /.well-known/change-password" do
     before(:each) do
       @path = '/.well-known/change-password'
     end
 
-    it "redirect to change password url" do
-      get @path
+    context "set redirect path" do
+      let(:redirect_path) { 'http://example.com/xxx' }
 
-      expect(last_response.status).to eq 302
-      expect(last_response.headers).to eq({ "Location" => "http://example.com/xxx" })
-      expect(last_response.body).to eq ''
+      it "redirect to change password url" do
+        get @path
+
+        expect(last_response.status).to eq 302
+        expect(last_response.headers).to eq({ "Location" => "http://example.com/xxx" })
+        expect(last_response.body).to eq ''
+      end
+    end
+
+    context "not set redirect path" do
+      it "raise error: not set redirect path" do
+        expect {
+          get @path
+        }.to raise_error(ChangePasswordUrlRails::Error)
+      end
     end
   end
 
