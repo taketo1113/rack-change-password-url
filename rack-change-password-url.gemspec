@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-require_relative "lib/change-password-url-rails/version"
+require_relative "lib/rack/change-password-url/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "change-password-url-rails"
-  spec.version = ChangePasswordUrlRails::VERSION
+  spec.name = "rack-change-password-url"
+  spec.version = Rack::ChangePasswordUrl::VERSION
   spec.authors = ["Taketo Takashima"]
   spec.email = ["t.taketo1113@gmail.com"]
 
   spec.summary = "Provides endpoing for a Well-Known URL for Changing Passwords"
   spec.description = "Provides endpoing for a Well-Known URL for Changing Passwords"
-  spec.homepage = "https://github.com/taketo1113/change-password-url-rails"
+  spec.homepage = "https://github.com/taketo1113/rack-change-password-url"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/taketo1113/change-password-url-rails"
-  spec.metadata["changelog_uri"] = "https://github.com/taketo1113/change-password-url-rails/releases"
+  spec.metadata["source_code_uri"] = "https://github.com/taketo1113/rack-change-password-url"
+  spec.metadata["changelog_uri"] = "https://github.com/taketo1113/rack-change-password-url/releases"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

@@ -2,7 +2,7 @@
 
 require "rack/test"
 
-RSpec.describe ChangePasswordUrlRails::Middleware do
+RSpec.describe Rack::ChangePasswordUrl::Middleware do
   include Rack::Test::Methods
   include_context 'mock app'
 
@@ -30,7 +30,7 @@ RSpec.describe ChangePasswordUrlRails::Middleware do
       it "raise error: not set redirect path" do
         expect {
           get @path
-        }.to raise_error(ChangePasswordUrlRails::Error)
+        }.to raise_error(Rack::ChangePasswordUrl::Error)
       end
     end
   end
