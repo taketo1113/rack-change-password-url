@@ -21,7 +21,7 @@ RSpec.describe Rack::ChangePasswordUrl::Middleware do
         get @path
 
         expect(last_response.status).to eq 302
-        expect(last_response.headers).to eq({ "Location" => "http://example.com/xxx" })
+        expect(last_response['location']).to eq "http://example.com/xxx"
         expect(last_response.body).to eq ''
       end
     end
