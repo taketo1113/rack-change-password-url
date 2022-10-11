@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Taketo Takashima"]
   spec.email = ["t.taketo1113@gmail.com"]
 
-  spec.summary = "Provides endpoing for a Well-Known URL for Changing Passwords"
-  spec.description = "Provides endpoing for a Well-Known URL for Changing Passwords"
+  spec.summary = "Provides endpoint of a Well-Known URL for Changing Passwords"
+  spec.description = "Provides endpoint of a Well-Known URL for Changing Passwords"
   spec.homepage = "https://github.com/taketo1113/rack-change-password-url"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"

@@ -1,8 +1,9 @@
-# RackChangePasswordUrl
+# Rack::ChangePasswordUrl
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rack-change-password-url`. To experiment with that code, run `bin/console` for an interactive prompt.
+Provides endpoint of a Well-Known URL for Changing Passwords for Rails and Rack apps.
 
-TODO: Delete this and the text above, and describe your gem
+References:
+* [A Well-Known URL for Changing Passwords | W3C](https://www.w3.org/TR/change-password-url/)
 
 ## Installation
 
@@ -15,8 +16,25 @@ If bundler is not being used to manage dependencies, install the gem by executin
     $ gem install rack-change-password-url
 
 ## Usage
+### For Rack App
 
-TODO: Write usage instructions here
+```ruby
+require "rack/change-password-url"
+
+use Rack::ChangePasswordUrl::Middleware, redirect_path: 'your-redirect-path'
+```
+
+### For Rails App
+
+```ruby
+# config/config/application.rb
+module MyApp
+  class Application < Rails::Application
+    ...
+    config.rack_change_password_url.redirect_path = 'your-redirect-path'
+  end
+end
+```
 
 ## Development
 
@@ -26,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/taketo1113/rack-change-password-url. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/taketo1113/rack-change-password-url/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/taketo1113/rack-change-password-url.
 
 ## License
 
