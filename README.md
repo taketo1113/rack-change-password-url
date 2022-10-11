@@ -27,7 +27,7 @@ use Rack::ChangePasswordUrl::Middleware, redirect_path: 'your-redirect-path'
 ### For Rails App
 
 ```ruby
-# config/config/application.rb
+# config/application.rb
 module MyApp
   class Application < Rails::Application
     ...
