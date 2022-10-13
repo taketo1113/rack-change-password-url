@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Provides endpoint of a Well-Known URL for Changing Passwords"
   spec.homepage = "https://github.com/taketo1113/rack-change-password-url"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/taketo1113/rack-change-password-url"
