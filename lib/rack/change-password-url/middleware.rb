@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
+require_relative 'configuration'
+
 module Rack
   module ChangePasswordUrl
     class Middleware
-      def initialize(app, options={})
+      def initialize(app)
         @app = app
+        @config = Rack::ChangePasswordUrl.configuration
 
-        @redirect_path = options[:redirect_path]
+        @redirect_path = @config.redirect_path
       end
 
       def call(env)

@@ -21,18 +21,19 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ```ruby
 require "rack/change-password-url"
 
-use Rack::ChangePasswordUrl::Middleware, redirect_path: 'your-redirect-path'
+Rack::ChangePasswordUrl.configure do |config|
+  config.redirect_path = 'your-redirect-path'
+end
+
+use Rack::ChangePasswordUrl::Middleware
 ```
 
 ### For Rails App
 
 ```ruby
-# config/application.rb
-module MyApp
-  class Application < Rails::Application
-    ...
-    config.rack_change_password_url.redirect_path = 'your-redirect-path'
-  end
+# config/initializers/change_password_url.rb
+Rack::ChangePasswordUrl.configure do |config|
+  config.redirect_path = 'your-redirect-path'
 end
 ```
 

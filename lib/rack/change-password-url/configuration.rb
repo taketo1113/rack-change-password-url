@@ -2,7 +2,7 @@
 
 module Rack
   module ChangePasswordUrl
-    class RailsOptions
+    class Configuration
       attr_accessor :redirect_path
     end
   end

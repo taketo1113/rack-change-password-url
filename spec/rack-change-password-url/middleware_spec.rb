@@ -7,7 +7,13 @@ RSpec.describe Rack::ChangePasswordUrl::Middleware do
   include_context 'mock app'
 
   let(:redirect_path) { nil }
-  let(:app) { described_class.new(mock_app, redirect_path: redirect_path) }
+  let(:app) { described_class.new(mock_app) }
+
+  before(:each) do
+    Rack::ChangePasswordUrl.configure do |config|
+      config.redirect_path = redirect_path
+    end
+  end
 
   context "path: /.well-known/change-password" do
     before(:each) do
