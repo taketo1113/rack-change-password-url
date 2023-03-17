@@ -4,7 +4,7 @@ GEM
     nio4r (2.5.8)
     puma (6.0.0)
       nio4r (~> 2.0)
-    rack (2.2.6.3)
+    rack (2.2.6.4)
     rack-change-password-url (0.1.0)
       rack (>= 2.2.3.1)
 
@@ -13,7 +13,7 @@ PLATFORMS
 
 DEPENDENCIES
   puma
-  rack (>= 2.2.6.1, < 3.0.0)
+  rack (>= 2.2.6.4, < 3.0.0)
   rack-change-password-url
 
 BUNDLED WITH
