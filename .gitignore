@@ -10,6 +10,7 @@
 /Gemfile.lock
 /vendor/bundle
 
+/examples/Gemfile.lock
 /examples/tmp
 
 # rspec failure tracking
