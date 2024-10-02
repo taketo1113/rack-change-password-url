@@ -50,7 +50,11 @@ RSpec.describe Rack::ChangePasswordUrl::Middleware do
       get @path
 
       expect(last_response.status).to eq 200
-      expect(last_response.headers).to eq({})
+      if Gem::Version.new(Rack.release) >= Gem::Version.new("3.1.0")
+        expect(last_response.headers).to eq({ "content-length" => "16" })
+      else
+        expect(last_response.headers).to eq({})
+      end
       expect(last_response.body).to eq 'Example App Body'
     end
   end
