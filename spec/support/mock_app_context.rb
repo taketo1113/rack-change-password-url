@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_context 'mock app' do
   let(:mock_app) { double 'Example Rack App' }
 
